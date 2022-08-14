@@ -8,22 +8,19 @@ public class Bird {
     private String observationPlace;
     private int quantity;// quantity of birds
     private String comment;
-//    Calendar date;
-
     Scanner scan = new Scanner(System.in);
 
     boolean flag;
+
+    public Bird(){
+    }
 
     public Bird(String date, String species) {
         this.date = date;
         this.species = species;
     }
-    public Bird(){
-
-    }
 
     public Bird(String date, String species, String sex, String age, String place, int quantity, String comment) {
-
         this.date = date;
         this.species = species;
         this.sex = sex;
@@ -31,33 +28,34 @@ public class Bird {
         observationPlace = place;
         this.quantity = quantity;
         this.comment = comment;
-
     }
 
     public String getDate() {
         return date;
     }
 
-    public void setDate(String newDate) {
-        this.date = newDate;
+    public void setDate() {
+        System.out.println(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
+        this.date = scan.nextLine();
     }
 
     public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(String newSpecies) {
-        this.species = newSpecies;
+    public void setSpecies() {
+        System.out.println(UiMessage.ENTER_THE_SPECIES);
+        this.species = scan.nextLine();
     }
 
     public String getSex() {
         return sex;
-    }
+    }// with recursion
 
     public String setSex() {
-        System.out.println("Enter the sex: male / female / unknown: ");
+        System.out.println(UiMessage.ENTER_THE_SEX);
         String newSex = scan.nextLine();
-        if (newSex.equals("male") || newSex.equals("female") || newSex.equals("unknown")) {
+        if (newSex.equals(UiMessage.MAIL) || newSex.equals(UiMessage.FEMALE) || newSex.equals(UiMessage.UNKNOWN)) {
             sex = newSex;
         } else {
             setSex();
@@ -65,13 +63,13 @@ public class Bird {
         return sex;
     }
 
-    public void setSex2(String newSex) {
+    public void setSex2(String newSex) {//without recursion
         while (!flag) {
-            if (newSex.equals("male") || newSex.equals("female") || newSex.equals("unknown")) {
+            if (newSex.equals(UiMessage.MAIL) || newSex.equals(UiMessage.FEMALE) || newSex.equals(UiMessage.UNKNOWN)) {
                 sex = newSex;
                 flag = true;
             } else {
-                System.out.println("Enter the wright sex: male / female / unknown");
+                System.out.println(UiMessage.ENTER_THE_SEX);
                 newSex = scan.nextLine();
             }
         }

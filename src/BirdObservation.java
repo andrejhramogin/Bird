@@ -7,7 +7,7 @@ public class BirdObservation {
         observation.print(observation.observationsArray);
     }
 
-    public void birdObserv2(Bird[]arr){
+    public void birdObserv2(Bird[]arr){// Почему не работает? NullPointerException
         observation.addObservation();
         observation.print(arr);
     }

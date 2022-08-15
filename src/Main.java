@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) {
 
         BirdObservation birdObservation = new BirdObservation();
-
         birdObservation.birdObserv();
 
 //        Bird[] observation = new Bird[2];

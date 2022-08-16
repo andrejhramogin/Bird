@@ -1,14 +1,20 @@
 public class BirdObservation {
 
-    Observation observation = new Observation();
+    ObservationArray observationArray = new ObservationArray();
+    ObservationList observationList = new ObservationList();
 
-    public void birdObserv( ){
-        observation.addObservation();
-        observation.print(observation.observationsArray);
+    public void birdObservArray(){
+        observationArray.addObservationToArray();
+        observationArray.printObservationArray(observationArray.observationsArray);
     }
 
     public void birdObserv2(Bird[]arr){// Почему не работает? NullPointerException
-        observation.addObservation();
-        observation.print(arr);
+        observationArray.addObservationToArray();
+        observationArray.printObservationArray(arr);
+    }
+
+    public void birdObservList(){
+        observationList.addObservationToList2();
+        observationList.printObservationList(observationList.listOfObservation);
     }
 }

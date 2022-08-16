@@ -1,29 +1,26 @@
-import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Bird {
-    private String date;
+    private LocalDate locDate;
     private String species;
     private String sex; // male/female/unknown
     private String age; // juv/ad/unknown
     private String observationPlace;
-    private int quantity;// quantity of birds
+    private int quantity;
     private String comment;
-    public final Scanner SCAN = new Scanner(System.in);
     Methods methods = new Methods();
-
-
 
     public Bird() {
     }
 
-    public Bird(String date, String species, String sex) {
-        this.date = date;
+    public Bird(LocalDate date, String species, String sex) {
+        this.locDate = date;
         this.species = species;
         this.sex = sex;
     }
 
-    public Bird(String date, String species, String sex, String age, String place, int quantity, String comment) {
-        this.date = date;
+    public Bird(LocalDate locDate, String species, String sex, String age, String place, int quantity, String comment) {
+        this.locDate = locDate;
         this.species = species;
         this.sex = sex;
         this.age = age;
@@ -32,13 +29,19 @@ public class Bird {
         this.comment = comment;
     }
 
-    public String getDate() {
-        return date;
+    public LocalDate getLocDate() {
+        return locDate;
     }
 
-    public void setDate() {
+    public void setLocDate() {
         methods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
-        this.date = SCAN.nextLine();
+        methods.printMessage(UiMessage.ENTER_THE_YEAR);
+        int year = methods.scanInteger();
+        methods.printMessage(UiMessage.ENTER_THE_MONTH);
+        int month = methods.scanInteger();
+        methods.printMessage(UiMessage.ENTER_THE_DAY);
+        int dayOfTheMonth = methods.scanInteger();
+        locDate = LocalDate.of(year, month, dayOfTheMonth);
     }
 
     public String getSpecies() {
@@ -47,33 +50,34 @@ public class Bird {
 
     public void setSpecies() {
         methods.printMessage(UiMessage.ENTER_THE_SPECIES);
-        this.species = SCAN.nextLine();
+        species = methods.scanString();
     }
 
     public String getSex() {
         return sex;
     }
 
-    public String setSex() {
+    public void setSex() {
         methods.printMessage(UiMessage.ENTER_THE_SEX);
-        String newSex = SCAN.nextLine();
-        if (newSex.equals(UiMessage.MALE) || newSex.equals(UiMessage.FEMALE) || newSex.equals(UiMessage.UNKNOWN)) {
-            sex = newSex;
-        } else {
-            setSex();
-        }
-        return sex;
-    }
-
-    public void setSex2(String newSex) {//without recursion
-        boolean flag  = false;
+        String newSex = methods.scanString();
+        boolean flag = false;
         while (!flag) {
-            if (newSex.equals(UiMessage.MALE) || newSex.equals(UiMessage.FEMALE) || newSex.equals(UiMessage.UNKNOWN)) {
-                sex = newSex;
+            if (newSex.equals("m") || newSex.equals("f") || newSex.equals("u")) {
+                switch (newSex) {
+                    case "m":
+                        sex = UiMessage.MALE;
+                        break;
+                    case "f":
+                        sex = UiMessage.FEMALE;
+                        break;
+                    case "u":
+                        sex = UiMessage.UNKNOWN;
+                        break;
+                }
                 flag = true;
             } else {
                 methods.printMessage(UiMessage.ENTER_THE_SEX);
-                newSex = SCAN.nextLine();
+                newSex = methods.scanString();
             }
         }
     }

@@ -1,3 +1,4 @@
+
 public class Observation {
 
     Bird bird=new Bird();
@@ -5,16 +6,16 @@ public class Observation {
 
     public void addObservation() {
         for (int i = 0; i < observationsArray.length; i++) {
-            bird.setDate();
+            bird.setLocDate();
             bird.setSpecies();
-            bird.setSex2(bird.SCAN.nextLine());
-            observationsArray[i] = new Bird(bird.getDate(), bird.getSpecies(), bird.getSex());
+            bird.setSex();
+            observationsArray[i] = new Bird(bird.getLocDate(), bird.getSpecies(), bird.getSex());
         }
     }
 
     public void print(Bird[] array) {
         for(Bird value : array) {
-            System.out.println(value.getDate() + " " + value.getSpecies()+" "+value.getSex());
+            System.out.println(value.getLocDate() + " " + value.getSpecies()+" "+value.getSex());
         }
     }
 }

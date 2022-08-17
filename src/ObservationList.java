@@ -18,7 +18,7 @@ public class ObservationList {
         quantityOfObservations = scanMethods.scanInteger(UiMessage.ENTER_THE_QUANTITY_OF_OBSERVATIONS);
         for(int i = 0; i<quantityOfObservations;i++) {
             enterObservationData();
-            listOfObservation.add(new Bird(bird.getLocDate(), bird.getSpecies(), bird.getSex()));
+            listOfObservation.add(new Bird(bird.getDate(), bird.getSpecies(), bird.getSex()));
             index2++;
         }
     }

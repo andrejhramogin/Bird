@@ -7,7 +7,7 @@ public class ObservationArray {
     public void addObservationToArray() {
         for (int i = 0; i < observationsArray.length; i++) {
             enterObservationData();
-            observationsArray[i] = new Bird(bird.getLocDate(), bird.getSpecies(), bird.getSex());
+            observationsArray[i] = new Bird(bird.getDate(), bird.getSpecies(), bird.getSex());
         }
     }
 
@@ -16,5 +16,4 @@ public class ObservationArray {
         bird.setSpecies();
         bird.setSex();
     }
-
   }

@@ -2,11 +2,8 @@ import java.util.Scanner;
 
 public class ScanMethods {
 
+    PrintMethods printMethods = new PrintMethods();
     private final Scanner SCAN = new Scanner(System.in);
-
-    public void printMessage(String msg){
-        System.out.println(msg);
-    }
 
     public String scanString(){
          return SCAN.nextLine();
@@ -20,12 +17,12 @@ public class ScanMethods {
     }
 
     public Integer scanInteger(String str){
-        printMessage(str);
+        printMethods.printMessage(str);
         return scanInteger();
     }
 
     public String scanString(String str){
-        printMessage(str);
+        printMethods.printMessage(str);
         return scanString();
     }
 }

@@ -1,7 +1,6 @@
 import java.time.LocalDate;
-
 public class Bird {
-    private LocalDate locDate;
+    private LocalDate date;
     private String species;
     private String sex; // male/female/unknown
     private String age; // juv/ad/unknown
@@ -9,18 +8,19 @@ public class Bird {
     private int quantity;
     private String comment;
     ScanMethods scanMethods = new ScanMethods();
+    PrintMethods printMethods = new PrintMethods();
 
     public Bird() {
     }
 
     public Bird(LocalDate date, String species, String sex) {
-        this.locDate = date;
+        this.date = date;
         this.species = species;
         this.sex = sex;
     }
 
-    public Bird(LocalDate locDate, String species, String sex, String age, String place, int quantity, String comment) {
-        this.locDate = locDate;
+    public Bird(LocalDate date, String species, String sex, String age, String place, int quantity, String comment) {
+        this.date = date;
         this.species = species;
         this.sex = sex;
         this.age = age;
@@ -29,17 +29,17 @@ public class Bird {
         this.comment = comment;
     }
 
-    public LocalDate getLocDate() {
-        return locDate;
+    public LocalDate getDate() {
+        return date;
     }
 
     public void setLocDate() {
         int year, month, dayOfTheMonth;
-        scanMethods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
+        printMethods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
         year = scanMethods.scanInteger(UiMessage.ENTER_THE_YEAR);
         month = scanMethods.scanInteger(UiMessage.ENTER_THE_MONTH);
         dayOfTheMonth = scanMethods.scanInteger(UiMessage.ENTER_THE_DAY);
-        locDate = LocalDate.of(year, month, dayOfTheMonth);
+        date = LocalDate.of(year, month, dayOfTheMonth);
     }
 
     public String getSpecies() {
@@ -55,7 +55,7 @@ public class Bird {
     }
 
     public void setSex() {
-        scanMethods.printMessage(UiMessage.ENTER_THE_SEX);
+        printMethods.printMessage(UiMessage.ENTER_THE_SEX);
         String newSex = scanMethods.scanString();
         boolean flag = false;
         while (!flag) {

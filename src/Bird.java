@@ -8,7 +8,7 @@ public class Bird {
     private String observationPlace;
     private int quantity;
     private String comment;
-    Methods methods = new Methods();
+    ScanMethods scanMethods = new ScanMethods();
 
     public Bird() {
     }
@@ -34,13 +34,11 @@ public class Bird {
     }
 
     public void setLocDate() {
-        methods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
-        methods.printMessage(UiMessage.ENTER_THE_YEAR);
-        int year = methods.scanInteger();
-        methods.printMessage(UiMessage.ENTER_THE_MONTH);
-        int month = methods.scanInteger();
-        methods.printMessage(UiMessage.ENTER_THE_DAY);
-        int dayOfTheMonth = methods.scanInteger();
+        int year, month, dayOfTheMonth;
+        scanMethods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
+        year = scanMethods.scanInteger(UiMessage.ENTER_THE_YEAR);
+        month = scanMethods.scanInteger(UiMessage.ENTER_THE_MONTH);
+        dayOfTheMonth = scanMethods.scanInteger(UiMessage.ENTER_THE_DAY);
         locDate = LocalDate.of(year, month, dayOfTheMonth);
     }
 
@@ -49,8 +47,7 @@ public class Bird {
     }
 
     public void setSpecies() {
-        methods.printMessage(UiMessage.ENTER_THE_SPECIES);
-        species = methods.scanString();
+        species = scanMethods.scanString(UiMessage.ENTER_THE_SPECIES);
     }
 
     public String getSex() {
@@ -58,8 +55,8 @@ public class Bird {
     }
 
     public void setSex() {
-        methods.printMessage(UiMessage.ENTER_THE_SEX);
-        String newSex = methods.scanString();
+        scanMethods.printMessage(UiMessage.ENTER_THE_SEX);
+        String newSex = scanMethods.scanString();
         boolean flag = false;
         while (!flag) {
             if (newSex.equals("m") || newSex.equals("f") || newSex.equals("u")) {
@@ -76,8 +73,7 @@ public class Bird {
                 }
                 flag = true;
             } else {
-                methods.printMessage(UiMessage.ENTER_THE_SEX);
-                newSex = methods.scanString();
+                newSex = scanMethods.scanString(UiMessage.ENTER_THE_SEX);
             }
         }
     }

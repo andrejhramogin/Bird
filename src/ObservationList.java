@@ -6,7 +6,7 @@ public class ObservationList {
     int index1 = 0;
     int index2 = 0;
     Bird bird = new Bird();
-    Methods methods = new Methods();
+    ScanMethods scanMethods = new ScanMethods();
 
     public void addObservationToList(Bird val) {
         listOfObservation.add(index1, val);
@@ -15,26 +15,17 @@ public class ObservationList {
 
     public void addObservationToList2(){
         int quantityOfObservations;
-        System.out.println(UiMessage.ENTER_THE_QUANTITY_OF_OBSERVATIONS);
-        quantityOfObservations = methods.scanInteger();
+        quantityOfObservations = scanMethods.scanInteger(UiMessage.ENTER_THE_QUANTITY_OF_OBSERVATIONS);
         for(int i = 0; i<quantityOfObservations;i++) {
-            bird.setLocDate();
-            bird.setSpecies();
-            bird.setSex();
+            enterObservationData();
             listOfObservation.add(new Bird(bird.getLocDate(), bird.getSpecies(), bird.getSex()));
             index2++;
         }
     }
 
-    public void printObservationList(List<Bird> list){
-        for (int i =0; i<list.size();i++) {
-            System.out.println(list.get(i).getLocDate() + " " + list.get(i).getSpecies() + " " +
-                    list.get(i).getSex());
-        }
-    }
-
-    public void printObservListByIndex(List<Bird>list, int i){
-        System.out.println(list.get(i).getLocDate()+" "+list.get(i).getSpecies()+" "+
-                list.get(i).getSex());
+    private void enterObservationData(){
+        bird.setLocDate();
+        bird.setSpecies();
+        bird.setSex();
     }
 }

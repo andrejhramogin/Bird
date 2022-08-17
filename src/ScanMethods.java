@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Methods {
+public class ScanMethods {
 
     private final Scanner SCAN = new Scanner(System.in);
 
@@ -17,5 +17,15 @@ public class Methods {
         i = SCAN.nextInt();
         SCAN.nextLine();
         return i;
+    }
+
+    public Integer scanInteger(String str){
+        printMessage(str);
+        return scanInteger();
+    }
+
+    public String scanString(String str){
+        printMessage(str);
+        return scanString();
     }
 }

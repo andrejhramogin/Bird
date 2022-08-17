@@ -6,16 +6,15 @@ public class ObservationArray {
 
     public void addObservationToArray() {
         for (int i = 0; i < observationsArray.length; i++) {
-            bird.setLocDate();
-            bird.setSpecies();
-            bird.setSex();
+            enterObservationData();
             observationsArray[i] = new Bird(bird.getLocDate(), bird.getSpecies(), bird.getSex());
         }
     }
 
-    public void printObservationArray(Bird[] array) {
-        for(Bird value : array) {
-            System.out.println(value.getLocDate() + " " + value.getSpecies()+" "+value.getSex());
-        }
+    private void enterObservationData(){
+        bird.setLocDate();
+        bird.setSpecies();
+        bird.setSex();
     }
-}
+
+  }

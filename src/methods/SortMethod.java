@@ -4,7 +4,7 @@ import observations.Bird;
 
 import java.util.List;
 
-public class SortMethods {
+public class SortMethod {
     public void sortList(List<Bird> list, String str){
         for(int i = 0; i<list.size(); i++){
             if (list.get(i).getSpecies().equals(str)){
@@ -15,7 +15,7 @@ public class SortMethods {
 
     public void sortArray(Bird[]arr, String str){
         for(int i = 0; i< arr.length; i++){
-            if(arr[i].getSpecies().equals("str")){
+            if(arr[i].getSpecies().equals(str)){
                 System.out.println(arr[i].getDate()+" "+arr[i].getSpecies()+" "+arr[i].getSex());
             }
         }

@@ -2,9 +2,9 @@ package methods;
 
 import java.util.Scanner;
 
-public class ScanMethods {
+public class ScanMethod {
 
-    PrintMethods printMethods = new PrintMethods();
+    PrintList printList = new PrintList();
     public final Scanner SCAN = new Scanner(System.in);
 
     public String scanString(){
@@ -19,12 +19,12 @@ public class ScanMethods {
     }
 
     public Integer scanInteger(String str){
-        printMethods.printMessage(str);
+        printList.printMessage(str);
         return scanInteger();
     }
 
     public String scanString(String str){
-        printMethods.printMessage(str);
+        printList.printMessage(str);
         return scanString();
     }
 }

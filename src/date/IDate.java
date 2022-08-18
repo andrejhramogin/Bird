@@ -2,6 +2,6 @@ package date;
 
 import java.time.LocalDate;
 
-public interface Date {
+public interface IDate {
     LocalDate setDate();
 }

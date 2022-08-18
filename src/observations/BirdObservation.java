@@ -2,24 +2,31 @@ package observations;
 
 import data.ObservationArray;
 import data.ObservationList;
-import methods.PrintMethods;
-import methods.SortMethods;
+import methods.PrintArray;
+import methods.PrintList;
+import methods.ScanMethod;
+import methods.SortMethod;
 
 public class BirdObservation {
 
-    PrintMethods printMethods = new PrintMethods();
-    SortMethods sortMethods = new SortMethods();
+    PrintList printList = new PrintList();
+    PrintArray printArray = new PrintArray();
+    SortMethod sortMethod = new SortMethod();
     ObservationArray observationArray = new ObservationArray();
     ObservationList observationList = new ObservationList();
+    ScanMethod scanMethod = new ScanMethod();
 
     public void birdObservArray(){
         observationArray.addObservationToArray();
-        printMethods.printObservationArray(observationArray.observationsArray);
+        printArray.printSome(observationArray.observationsArray);
+        scanMethod.SCAN.close();
     }
 
     public void birdObservList(){
         observationList.addObservationToList2();
-        printMethods.printObservationList(observationList.listOfObservation);
-        sortMethods.sortList(observationList.listOfObservation, "sw");
+        printList.printSome(observationList.listOfObservation);
+        sortMethod.sortList(observationList.listOfObservation, "sw");
+
+        scanMethod.SCAN.close();
     }
 }

@@ -3,20 +3,20 @@ package observations;
 import java.time.LocalDate;
 
 import date.LocDate;
-import methods.PrintMethods;
-import methods.ScanMethods;
+import methods.PrintList;
+import methods.ScanMethod;
 import uidata.UiMessage;
 
 public class Bird {
     private LocalDate date;
     private String species;
-    private String sex; // male/female/unknown
-    private String age; // juv/ad/unknown
+    private String sex;
+    private String age;
     private String observationPlace;
     private int quantity;
     private String comment;
-    ScanMethods scanMethods = new ScanMethods();
-    PrintMethods printMethods = new PrintMethods();
+    ScanMethod scanMethod = new ScanMethod();
+    PrintList printList = new PrintList();
     LocDate locDate = new LocDate();
 
     public Bird() {
@@ -51,7 +51,7 @@ public class Bird {
     }
 
     public void setSpecies() {
-        species = scanMethods.scanString(UiMessage.ENTER_THE_SPECIES);
+        species = scanMethod.scanString(UiMessage.ENTER_THE_SPECIES);
     }
 
     public String getSex() {
@@ -59,8 +59,8 @@ public class Bird {
     }
 
     public void setSex() {
-        printMethods.printMessage(UiMessage.ENTER_THE_SEX);
-        String newSex = scanMethods.scanString();
+        printList.printMessage(UiMessage.ENTER_THE_SEX);
+        String newSex = scanMethod.scanString();
         boolean flag = false;
         while (!flag) {
             if (newSex.equals("m") || newSex.equals("f") || newSex.equals("u")) {
@@ -77,7 +77,7 @@ public class Bird {
                 }
                 flag = true;
             } else {
-                newSex = scanMethods.scanString(UiMessage.ENTER_THE_SEX);
+                newSex = scanMethod.scanString(UiMessage.ENTER_THE_SEX);
             }
         }
     }

@@ -1,4 +1,12 @@
+package observations;
+
 import java.time.LocalDate;
+
+import date.LocDate;
+import methods.PrintMethods;
+import methods.ScanMethods;
+import uidata.UiMessage;
+
 public class Bird {
     private LocalDate date;
     private String species;
@@ -9,6 +17,7 @@ public class Bird {
     private String comment;
     ScanMethods scanMethods = new ScanMethods();
     PrintMethods printMethods = new PrintMethods();
+    LocDate locDate = new LocDate();
 
     public Bird() {
     }
@@ -33,13 +42,8 @@ public class Bird {
         return date;
     }
 
-    public void setLocDate() {
-        int year, month, dayOfTheMonth;
-        printMethods.printMessage(UiMessage.ENTER_THE_DATE_OF_OBSERVATION);
-        year = scanMethods.scanInteger(UiMessage.ENTER_THE_YEAR);
-        month = scanMethods.scanInteger(UiMessage.ENTER_THE_MONTH);
-        dayOfTheMonth = scanMethods.scanInteger(UiMessage.ENTER_THE_DAY);
-        date = LocalDate.of(year, month, dayOfTheMonth);
+    public void setDate() {
+        date = locDate.setDate();
     }
 
     public String getSpecies() {

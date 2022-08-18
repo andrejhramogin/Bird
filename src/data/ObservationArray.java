@@ -1,3 +1,6 @@
+package data;
+
+import observations.Bird;
 
 public class ObservationArray {
 
@@ -12,7 +15,7 @@ public class ObservationArray {
     }
 
     private void enterObservationData(){
-        bird.setLocDate();
+        bird.setDate();
         bird.setSpecies();
         bird.setSex();
     }

@@ -1,9 +1,11 @@
+package methods;
+
 import java.util.Scanner;
 
 public class ScanMethods {
 
     PrintMethods printMethods = new PrintMethods();
-    private final Scanner SCAN = new Scanner(System.in);
+    public final Scanner SCAN = new Scanner(System.in);
 
     public String scanString(){
          return SCAN.nextLine();

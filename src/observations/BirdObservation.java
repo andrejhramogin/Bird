@@ -1,3 +1,10 @@
+package observations;
+
+import data.ObservationArray;
+import data.ObservationList;
+import methods.PrintMethods;
+import methods.SortMethods;
+
 public class BirdObservation {
 
     PrintMethods printMethods = new PrintMethods();
@@ -8,11 +15,6 @@ public class BirdObservation {
     public void birdObservArray(){
         observationArray.addObservationToArray();
         printMethods.printObservationArray(observationArray.observationsArray);
-    }
-
-    public void birdObserv2(Bird[]arr){
-        observationArray.addObservationToArray();
-        printMethods.printObservationArray(arr);
     }
 
     public void birdObservList(){

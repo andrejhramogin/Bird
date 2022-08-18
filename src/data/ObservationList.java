@@ -1,8 +1,14 @@
+package data;
+
+import methods.ScanMethods;
+import observations.Bird;
+import uidata.UiMessage;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ObservationList {
-    List<Bird> listOfObservation = new ArrayList<>();
+    public List<Bird> listOfObservation = new ArrayList<>();
     int index1 = 0;
     int index2 = 0;
     Bird bird = new Bird();
@@ -23,8 +29,8 @@ public class ObservationList {
         }
     }
 
-    private void enterObservationData(){
-        bird.setLocDate();
+    public void enterObservationData(){
+        bird.setDate();
         bird.setSpecies();
         bird.setSex();
     }

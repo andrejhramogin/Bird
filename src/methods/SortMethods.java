@@ -1,3 +1,7 @@
+package methods;
+
+import observations.Bird;
+
 import java.util.List;
 
 public class SortMethods {

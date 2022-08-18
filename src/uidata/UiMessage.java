@@ -1,3 +1,5 @@
+package uidata;
+
 public class UiMessage {
 
     public static final String ENTER_THE_SPECIES = "Enter the species: ";

@@ -19,11 +19,12 @@ public class BirdObservation {
     public void birdObservArray(){
         observationArray.addObservationToArray();
         printArray.printSome(observationArray.observationsArray);
+
         scanMethod.SCAN.close();
     }
 
     public void birdObservList(){
-        observationList.addObservationToList2();
+        observationList.addToList();
         printList.printSome(observationList.listOfObservation);
         sortMethod.sortList(observationList.listOfObservation, "sw");
 

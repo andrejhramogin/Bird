@@ -16,4 +16,8 @@ public class PrintArray {
                     value.getObservationPlace() + ", " + value.getQuantity() + ", " + value.getComment());
         }
     }
-}
+
+    public void printByIndex (Bird[] array, int index){
+        System.out.println(array[index].getDate()+" "+array[index].getSpecies()+" "+array[index].getSex());
+        }
+    }

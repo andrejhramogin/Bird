@@ -33,7 +33,7 @@ public class Bird {
         this.species = species;
         this.sex = sex;
         this.age = age;
-        observationPlace = place;
+        this.observationPlace = place;
         this.quantity = quantity;
         this.comment = comment;
     }
